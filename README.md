@@ -5,9 +5,15 @@ backends, and TCP/UDP listeners.
 
 ## 1. Overview
 
-The module owns the NLB and its direct resources. Callers own VPCs, subnets,
-security groups, EIPs, and backend instances. It is suitable for long
-connections such as game, IM, proxy gateway, and database proxy entry points.
+Manages Volcengine NLBs, TCP/UDP listeners, server groups, backend registration,
+and health checks for gateways, messaging, games, and database proxies. Supports
+public/private and single/multi-AZ deployments, cross-zone forwarding, session
+persistence, connection timeouts, and draining.
+
+Callers manage VPCs, subnets, security groups, EIPs, and ECS backends. Public IPv4
+requires a distinct EIP per zone. TLS listeners and log collection/delivery are
+not included.
+
 
 ## 2. Usage
 
